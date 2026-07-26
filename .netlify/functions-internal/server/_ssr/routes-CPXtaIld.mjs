@@ -6,7 +6,7 @@ import { g as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { B as Calendar, F as CircleAlert, N as Clock, O as Flame, P as CircleCheck, T as HeartPulse, U as ArrowRight, a as Users, f as Sparkles, h as Scale, i as UtensilsCrossed, p as ShieldCheck, u as Star, w as Info, z as Check } from "../_libs/lucide-react.mjs";
 import { a as SERVICES, i as AccordionTrigger, n as AccordionContent, r as AccordionItem, t as Accordion } from "./accordion-bGyU_r4k.mjs";
 import { i as Trigger, n as List, r as Root2, t as Content } from "../_libs/radix-ui__react-tabs.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-CYpStSwv.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-CPXtaIld.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Tabs = Root2;
@@ -173,19 +173,22 @@ function HeroInteractiveWidget() {
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TabsList, {
 						className: "grid w-full grid-cols-3 gap-1 rounded-xl bg-muted/80 p-1 mb-6",
 						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TabsTrigger, {
 								value: "meet",
-								className: "py-2 text-xs sm:text-sm font-semibold rounded-lg",
-								children: "Meet Dn. Minahal"
+								className: "py-2 px-1 sm:px-3 text-[10px] min-[375px]:text-xs sm:text-sm font-semibold rounded-lg",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "hidden min-[380px]:inline",
+									children: "Meet "
+								}), "Dn. Minahal"]
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
 								value: "swap",
-								className: "py-2 text-xs sm:text-sm font-semibold rounded-lg",
+								className: "py-2 px-1 sm:px-3 text-[10px] min-[375px]:text-xs sm:text-sm font-semibold rounded-lg",
 								children: "Food Swaps"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
 								value: "portions",
-								className: "py-2 text-xs sm:text-sm font-semibold rounded-lg",
+								className: "py-2 px-1 sm:px-3 text-[10px] min-[375px]:text-xs sm:text-sm font-semibold rounded-lg",
 								children: "Portion Guide"
 							})
 						]

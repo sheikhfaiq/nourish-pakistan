@@ -10,33 +10,17 @@ export function FloatingActions() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const isBookPage = pathname === "/book";
 
-  // If we are already on the book page, don't overlap the mobile bottom area or keep it clean
-  return (
-    <>
-      {/* Desktop/Tablet view: Circular button bottom-right */}
-      <a
-        href="https://wa.me/923001234567?text=Salam!%20I%27d%20like%20to%20book%20a%20nutrition%20consultation."
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Chat on WhatsApp"
-        className="fixed bottom-8 right-5 z-40 hidden sm:grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-glow animate-pulse-ring transition hover:scale-105"
-      >
-        <WhatsAppIcon className="h-6 w-6" />
-      </a>
+  if (isBookPage) return null;
 
-      {/* Mobile view: Full-width fixed pill WhatsApp button at the bottom */}
-      {!isBookPage && (
-        <a
-          href="https://wa.me/923001234567?text=Salam!%20I%27d%20like%20to%20book%20a%20nutrition%20consultation."
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Chat on WhatsApp"
-          className="fixed bottom-8 left-5 right-5 z-40 flex sm:hidden items-center justify-center gap-2 rounded-full bg-[#25D366] py-3.5 text-sm font-semibold text-white shadow-glow transition hover:scale-[1.02] active:scale-[0.98]"
-        >
-          <WhatsAppIcon className="h-5 w-5" />
-          <span>Chat on WhatsApp</span>
-        </a>
-      )}
-    </>
+  return (
+    <a
+      href="https://wa.me/923001234567?text=Salam!%20I%27d%20like%20to%20book%20a%20nutrition%20consultation."
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Chat on WhatsApp"
+      className="fixed bottom-8 right-5 z-40 grid h-12 w-12 sm:h-14 sm:w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-glow animate-pulse-ring transition hover:scale-105"
+    >
+      <WhatsAppIcon className="h-5 w-5 sm:h-6 sm:w-6" />
+    </a>
   );
 }

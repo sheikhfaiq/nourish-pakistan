@@ -6,10 +6,10 @@ import { C as Instagram, S as Leaf, _ as Phone, b as MapPin, k as Facebook, n as
 import { t as Toaster } from "../_libs/sonner.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-4QabhYHk.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-gMDxf9lj.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-D2_1z0p6.css";
+var styles_default = "/assets/styles-C9Q4vnaa.css";
 function reportLovableError(error, context = {}) {
 	if (typeof window === "undefined") return;
 	window.__lovableEvents?.captureException?.(error, {
@@ -281,22 +281,15 @@ var WhatsAppIcon = ({ className = "h-6 w-6" }) => /* @__PURE__ */ (0, import_jsx
 	children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008 0c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 12.003-2.002-.001-3.973-.5-5.739-1.45L0 24.002zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436-.002 9.858-4.427 9.861-9.867.002-2.637-1.03-5.112-2.905-6.99C16.654 1.86 14.178 1.83 11.54 1.83c-5.437 0-9.857 4.426-9.86 9.868-.001 1.637.425 3.235 1.238 4.646l-.993 3.63 3.722-.975zm11.367-5.321c-.314-.157-1.859-.918-2.143-1.021-.284-.103-.491-.157-.698.157-.207.314-.799 1.002-.98 1.21-.181.207-.362.232-.676.075-.314-.157-1.328-.49-2.53-1.562-.935-.834-1.566-1.863-1.748-2.178-.181-.314-.019-.484.138-.64.14-.139.314-.366.472-.549.157-.183.21-.314.314-.524.103-.21.052-.393-.026-.549-.078-.157-.698-1.683-.957-2.308-.252-.607-.51-.524-.698-.534-.18-.01-.387-.012-.594-.012s-.543.078-.826.393c-.284.314-1.086 1.063-1.086 2.593 0 1.53 1.112 3.01 1.268 3.222.156.21 2.19 3.344 5.305 4.688.741.32 1.318.51 1.77.653.745.237 1.423.203 1.959.123.598-.089 1.859-.76 2.122-1.455.263-.695.263-1.288.185-1.414-.078-.126-.284-.21-.598-.367z" })
 });
 function FloatingActions() {
-	const isBookPage = useRouterState({ select: (s) => s.location.pathname }) === "/book";
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+	if (useRouterState({ select: (s) => s.location.pathname }) === "/book") return null;
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 		href: "https://wa.me/923001234567?text=Salam!%20I%27d%20like%20to%20book%20a%20nutrition%20consultation.",
 		target: "_blank",
 		rel: "noreferrer",
 		"aria-label": "Chat on WhatsApp",
-		className: "fixed bottom-8 right-5 z-40 hidden sm:grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-glow animate-pulse-ring transition hover:scale-105",
-		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(WhatsAppIcon, { className: "h-6 w-6" })
-	}), !isBookPage && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-		href: "https://wa.me/923001234567?text=Salam!%20I%27d%20like%20to%20book%20a%20nutrition%20consultation.",
-		target: "_blank",
-		rel: "noreferrer",
-		"aria-label": "Chat on WhatsApp",
-		className: "fixed bottom-8 left-5 right-5 z-40 flex sm:hidden items-center justify-center gap-2 rounded-full bg-[#25D366] py-3.5 text-sm font-semibold text-white shadow-glow transition hover:scale-[1.02] active:scale-[0.98]",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(WhatsAppIcon, { className: "h-5 w-5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Chat on WhatsApp" })]
-	})] });
+		className: "fixed bottom-8 right-5 z-40 grid h-12 w-12 sm:h-14 sm:w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-glow animate-pulse-ring transition hover:scale-105",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(WhatsAppIcon, { className: "h-5 w-5 sm:h-6 sm:w-6" })
+	});
 }
 var Toaster$1 = ({ ...props }) => {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Toaster, {
@@ -466,7 +459,7 @@ function RootComponent() {
 		})
 	});
 }
-var $$splitComponentImporter$5 = () => import("./routes-CYpStSwv.mjs");
+var $$splitComponentImporter$5 = () => import("./routes-CPXtaIld.mjs");
 var Route$5 = createFileRoute("/")({
 	head: () => ({ meta: [
 		{ title: "Nourish with Dn. Minahal Farrukh — Certified Dietitian & Nutritionist" },

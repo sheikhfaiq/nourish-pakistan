@@ -177,13 +177,13 @@ export function HeroInteractiveWidget() {
       <div className="overflow-hidden rounded-[2rem] border border-white/60 bg-white/95 p-4 shadow-glow backdrop-blur-sm sm:p-6">
         <Tabs defaultValue="meet" className="w-full">
           <TabsList className="grid w-full grid-cols-3 gap-1 rounded-xl bg-muted/80 p-1 mb-6">
-            <TabsTrigger value="meet" className="py-2 text-xs sm:text-sm font-semibold rounded-lg">
-              Meet Dn. Minahal
+            <TabsTrigger value="meet" className="py-2 px-1 sm:px-3 text-[10px] min-[375px]:text-xs sm:text-sm font-semibold rounded-lg">
+              <span className="hidden min-[380px]:inline">Meet </span>Dn. Minahal
             </TabsTrigger>
-            <TabsTrigger value="swap" className="py-2 text-xs sm:text-sm font-semibold rounded-lg">
+            <TabsTrigger value="swap" className="py-2 px-1 sm:px-3 text-[10px] min-[375px]:text-xs sm:text-sm font-semibold rounded-lg">
               Food Swaps
             </TabsTrigger>
-            <TabsTrigger value="portions" className="py-2 text-xs sm:text-sm font-semibold rounded-lg">
+            <TabsTrigger value="portions" className="py-2 px-1 sm:px-3 text-[10px] min-[375px]:text-xs sm:text-sm font-semibold rounded-lg">
               Portion Guide
             </TabsTrigger>
           </TabsList>
