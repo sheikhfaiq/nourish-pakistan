@@ -10,7 +10,7 @@ export function SiteFooter() {
             <span className="grid h-10 w-10 place-items-center rounded-xl bg-leaf-gradient text-primary-foreground shadow-soft">
               <Leaf className="h-5 w-5" />
             </span>
-            <span className="font-display text-lg font-bold">Nourish with Ayesha</span>
+            <span className="font-display text-lg font-bold">Nourish with Dn. Minahal</span>
           </div>
           <p className="mt-4 max-w-xs text-sm text-muted-foreground">
             Personalised, evidence-based nutrition care rooted in Pakistani lifestyles and homemade food.
@@ -31,7 +31,7 @@ export function SiteFooter() {
             <li><Link to="/services" className="hover:text-primary">Services</Link></li>
             <li><Link to="/success-stories" className="hover:text-primary">Success Stories</Link></li>
             <li><Link to="/contact" className="hover:text-primary">Contact</Link></li>
-            <li><Link to="/book" className="hover:text-primary">Book Consultation</Link></li>
+            {/* <li><Link to="/book" className="hover:text-primary">Book Consultation</Link></li> */}
           </ul>
         </div>
 
@@ -39,23 +39,23 @@ export function SiteFooter() {
           <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">Contact</h4>
           <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
             <li className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 text-primary" /> +92 300 1234567</li>
-            <li className="flex items-start gap-2"><Mail className="mt-0.5 h-4 w-4 text-primary" /> hello@nourishwithayesha.pk</li>
-            <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-primary" /> Gulberg III, Lahore, Pakistan</li>
+            <li className="flex items-start gap-2"><Mail className="mt-0.5 h-4 w-4 text-primary" /> info@nourishpakistan.com</li>
+            <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-primary" /> Move Better Clinic, East Canal Road, Faisalabad</li>
           </ul>
         </div>
 
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">Hours</h4>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-            <li>Mon – Sat: 10:00 AM – 8:00 PM</li>
-            <li>Sunday: By appointment</li>
+            <li>Mon – Fri: 2:00 PM – 7:00 PM</li>
+            <li>Sat – Sun: Closed</li>
             <li>Online consultations across Pakistan</li>
           </ul>
         </div>
       </div>
       <div className="border-t border-border">
         <p className="mx-auto max-w-7xl px-4 py-5 text-center text-xs text-muted-foreground sm:px-6 lg:px-8">
-          © {new Date().getFullYear()} Nourish with Ayesha. All rights reserved. Crafted with care in Pakistan.
+          © {new Date().getFullYear()} Nourish with Dn. Minahal. All rights reserved. Crafted with care in Pakistan.
         </p>
       </div>
     </footer>

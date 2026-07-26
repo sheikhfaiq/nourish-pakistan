@@ -8,10 +8,10 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Nourish with Ayesha, Nutritionist in Pakistan" },
-      { name: "description", content: "Get in touch with Ayesha for nutrition consultations, questions or collaborations. WhatsApp, email and clinic address." },
-      { property: "og:title", content: "Contact Nourish with Ayesha" },
-      { property: "og:description", content: "Reach out via WhatsApp, email or visit our Lahore clinic." },
+      { title: "Contact — Nourish with Dn. Minahal Farrukh, Dietitian in Pakistan" },
+      { name: "description", content: "Get in touch with Dn. Minahal Farrukh for nutrition consultations, questions or collaborations. WhatsApp, email and clinic address." },
+      { property: "og:title", content: "Contact Nourish with Dn. Minahal Farrukh" },
+      { property: "og:description", content: "Reach out via WhatsApp, email or visit our Faisalabad clinic." },
     ],
   }),
   component: ContactPage,
@@ -61,14 +61,14 @@ function ContactPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-[1.1fr_1fr]">
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr]">
           <Reveal>
-            <form onSubmit={onSubmit} className="rounded-2xl border border-border bg-white p-6 shadow-soft sm:p-8">
+            <form onSubmit={onSubmit} className="rounded-2xl border border-border bg-white p-5 shadow-soft sm:p-8">
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="block">
                   <span className="text-sm font-medium">Full name</span>
-                  <input name="name" required maxLength={80} className="mt-1.5 w-full rounded-xl border border-input bg-white px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Ayesha Khan" />
+                  <input name="name" required maxLength={80} className="mt-1.5 w-full rounded-xl border border-input bg-white px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Sara Ahmed" />
                 </label>
                 <label className="block">
                   <span className="text-sm font-medium">Phone / WhatsApp</span>
@@ -83,28 +83,28 @@ function ContactPage() {
                 <span className="text-sm font-medium">Your message</span>
                 <textarea name="message" required maxLength={1000} rows={5} className="mt-1.5 w-full resize-none rounded-xl border border-input bg-white px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Tell me a bit about what you're looking for…" />
               </label>
-              <button disabled={submitting} className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-leaf-gradient px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-soft transition hover:-translate-y-0.5 disabled:opacity-70">
+              <button disabled={submitting} className="mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-leaf-gradient px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-soft transition hover:-translate-y-0.5 disabled:opacity-70 cursor-pointer">
                 <Send className="h-4 w-4" /> {submitting ? "Sending…" : "Send message"}
               </button>
             </form>
           </Reveal>
 
           <Reveal delay={100}>
-            <div className="grid gap-4">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
               {[
                 { icon: MessageCircle, title: "WhatsApp", body: "+92 300 1234567", href: "https://wa.me/923001234567", cta: "Chat now" },
                 { icon: Phone, title: "Phone", body: "+92 300 1234567", href: "tel:+923001234567", cta: "Call" },
-                { icon: Mail, title: "Email", body: "hello@nourishwithayesha.pk", href: "mailto:hello@nourishwithayesha.pk", cta: "Email me" },
-                { icon: MapPin, title: "Clinic", body: "Gulberg III, Lahore, Pakistan", href: "#map", cta: "See map" },
+                { icon: Mail, title: "Email", body: "info@nourishpakistan.com", href: "mailto:info@nourishpakistan.com", cta: "Email me" },
+                { icon: MapPin, title: "Clinic", body: "Move Better Clinic, East Canal Road, Faisalabad", href: "#map", cta: "See map" },
               ].map((c) => (
                 <a key={c.title} href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer"
-                  className="flex items-center gap-4 rounded-2xl border border-border bg-white p-5 shadow-soft transition hover:-translate-y-0.5 hover:border-primary/30">
+                  className="flex items-start sm:items-center gap-4 rounded-2xl border border-border bg-white p-5 shadow-soft transition hover:-translate-y-0.5 hover:border-primary/30">
                   <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-secondary text-primary"><c.icon className="h-6 w-6" /></span>
                   <div className="min-w-0 flex-1">
                     <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{c.title}</p>
-                    <p className="truncate font-medium">{c.body}</p>
+                    <p className="font-medium text-sm sm:text-base break-words whitespace-pre-line mt-0.5 leading-snug">{c.body}</p>
                   </div>
-                  <span className="hidden text-sm font-semibold text-primary sm:inline">{c.cta} →</span>
+                  <span className="hidden text-sm font-semibold text-primary sm:inline shrink-0">{c.cta} →</span>
                 </a>
               ))}
             </div>
@@ -118,13 +118,13 @@ function ContactPage() {
           <div className="overflow-hidden rounded-[2rem] border border-border shadow-soft">
             <div className="border-b border-border bg-white p-5">
               <p className="text-sm font-semibold uppercase tracking-wider text-primary">Find the clinic</p>
-              <h2 className="mt-1 font-display text-2xl font-bold">Gulberg III, Lahore</h2>
-              <p className="text-sm text-muted-foreground">Free parking · Ground floor · Wheelchair accessible</p>
+              <h2 className="mt-1 font-display text-2xl font-bold">Move Better Clinic, Faisalabad</h2>
+              <p className="text-sm text-muted-foreground">East Canal Road · Free parking · Ground floor · Wheelchair accessible</p>
             </div>
-            <div className="aspect-[16/10] w-full sm:aspect-[21/9]">
+            <div className="w-full h-[320px] sm:h-[450px]">
               <iframe
-                title="Clinic location — Gulberg III, Lahore"
-                src="https://www.google.com/maps?q=Gulberg+III,+Lahore,+Pakistan&output=embed"
+                title="Clinic location — Move Better Clinic, East Canal Road, Faisalabad"
+                src="https://www.google.com/maps?q=Move+Better+Clinic,+East+Canal+Road,+Faisalabad,+Pakistan&output=embed"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="h-full w-full border-0"

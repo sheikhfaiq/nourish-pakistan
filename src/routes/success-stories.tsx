@@ -5,7 +5,7 @@ import { Reveal, Counter } from "@/components/site/Reveal";
 export const Route = createFileRoute("/success-stories")({
   head: () => ({
     meta: [
-      { title: "Success Stories — Real Results with Nourish with Ayesha" },
+      { title: "Success Stories — Real Results with Nourish with Dn. Minahal Farrukh" },
       { name: "description", content: "Before & after stories from Pakistani clients — weight loss, diabetes control, PCOS relief and lifestyle transformations." },
       { property: "og:title", content: "Client Success Stories" },
       { property: "og:description", content: "Real journeys, real results, real Pakistani families." },
@@ -15,11 +15,11 @@ export const Route = createFileRoute("/success-stories")({
 });
 
 const stories = [
-  { name: "Sara A.", city: "Lahore", initials: "SA", before: "82 kg · low energy", after: "71 kg · energetic", body: "I lost 11 kg in 5 months without giving up roti. Ayesha made it feel doable — not a punishment. My skin, sleep and mood all improved.", rating: 5, tag: "Weight Loss" },
+  { name: "Sara A.", city: "Lahore", initials: "SA", before: "82 kg · low energy", after: "71 kg · energetic", body: "I lost 11 kg in 5 months without giving up roti. Dn. Minahal made it feel doable — not a punishment. My skin, sleep and mood all improved.", rating: 5, tag: "Weight Loss" },
   { name: "Bilal K.", city: "Karachi", initials: "BK", before: "HbA1c 8.7", after: "HbA1c 6.2", body: "My HbA1c dropped from 8.7 to 6.2 in 6 months. She understands how Pakistani households eat — no unrealistic swaps.", rating: 5, tag: "Diabetes" },
   { name: "Hina M.", city: "Islamabad", initials: "HM", before: "Irregular cycles, acne", after: "Regular cycles, clearer skin", body: "PCOS symptoms improved within 3 months. My cycles are regular, my skin is clearer, and I finally feel in control of my body.", rating: 5, tag: "PCOS" },
   { name: "Ayaan R.", city: "Rawalpindi", initials: "AR", before: "58 kg, low stamina", after: "66 kg lean gain", body: "Gained 8 kg of lean weight in 4 months without junk food. Strength in the gym doubled.", rating: 5, tag: "Weight Gain" },
-  { name: "Fatima Z.", city: "Faisalabad", initials: "FZ", before: "Constant bloating", after: "Comfortable digestion", body: "Ayesha helped me identify trigger foods for my IBS. I'm calm, comfortable and eating a wider variety of food than before.", rating: 5, tag: "Gut Health" },
+  { name: "Fatima Z.", city: "Faisalabad", initials: "FZ", before: "Constant bloating", after: "Comfortable digestion", body: "Dn. Minahal helped me identify trigger foods for my IBS. I'm calm, comfortable and eating a wider variety of food than before.", rating: 5, tag: "Gut Health" },
   { name: "Nida S.", city: "Multan", initials: "NS", before: "Pregnancy nausea", after: "Healthy 2nd trimester", body: "Warm, safe nutrition support through my pregnancy. Nausea reduced and my energy came back.", rating: 5, tag: "Pregnancy" },
 ];
 
@@ -78,9 +78,9 @@ function SuccessPage() {
       <section className="bg-leaf-gradient py-16 text-primary-foreground">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-4 sm:px-6 lg:grid-cols-4 lg:px-8">
           {[
-            { n: 1200, s: "+", l: "Clients helped", i: HeartPulse },
+            { n: 50, s: "+", l: "Clients helped", i: HeartPulse },
             { n: 98, s: "%", l: "Satisfaction", i: Star },
-            { n: 8, s: "+", l: "Years experience", i: Sparkles },
+            { n: 3, s: "+", l: "Years experience", i: Sparkles },
             { n: 95, s: "%", l: "Success rate", i: TrendingDown },
           ].map((s, i) => (
             <Reveal key={i} delay={i * 80} className="text-center">

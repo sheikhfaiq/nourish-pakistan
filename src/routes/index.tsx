@@ -2,16 +2,16 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, CheckCircle2, Sparkles, Star, ShieldCheck, Clock, Users, HeartPulse, ChevronDown } from "lucide-react";
 import { Reveal, Counter } from "@/components/site/Reveal";
 import { SERVICES } from "@/data/services";
-import heroImg from "@/assets/hero-nutritionist.jpg";
+import { HeroInteractiveWidget } from "@/components/site/HeroInteractiveWidget";
 import mealImg from "@/assets/healthy-meal.jpg";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nourish with Ayesha — Certified Nutritionist in Pakistan" },
+      { title: "Nourish with Dn. Minahal Farrukh — Certified Dietitian & Nutritionist" },
       { name: "description", content: "Personalised online nutrition consultations across Pakistan — weight loss, diabetes, PCOS, pregnancy & family nutrition." },
-      { property: "og:title", content: "Nourish with Ayesha — Certified Nutritionist in Pakistan" },
+      { property: "og:title", content: "Nourish with Dn. Minahal Farrukh — Certified Dietitian & Nutritionist" },
       { property: "og:description", content: "Warm, evidence-based nutrition care rooted in Pakistani lifestyles. Book your consultation." },
     ],
   }),
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
 });
 
 const whyChoose = [
-  { icon: ShieldCheck, title: "Certified & Evidence-Based", text: "Registered dietitian with 8+ years guiding real Pakistani families." },
+  { icon: ShieldCheck, title: "Certified & Evidence-Based", text: "Registered dietitian with 3+ years guiding real Pakistani families." },
   { icon: HeartPulse, title: "Rooted in Desi Food", text: "Plans built around roti, daal, sabzi and your everyday kitchen." },
   { icon: Clock, title: "Truly Personalised", text: "No copy-paste plans. Every consultation is built around you." },
   { icon: Users, title: "For the Whole Family", text: "From kids to elders, we care for every stage of life." },
@@ -33,13 +33,13 @@ const process = [
 ];
 
 const testimonials = [
-  { name: "Sara A.", city: "Lahore", text: "I lost 11 kg in 5 months without giving up roti. Ayesha made it feel doable — not a punishment.", rating: 5 },
+  { name: "Sara A.", city: "Lahore", text: "I lost 11 kg in 5 months without giving up roti. Dn. Minahal made it feel doable — not a punishment.", rating: 5 },
   { name: "Bilal K.", city: "Karachi", text: "My HbA1c dropped from 8.7 to 6.2. She actually understands how Pakistani households eat.", rating: 5 },
   { name: "Hina M.", city: "Islamabad", text: "PCOS symptoms improved within 3 months. My cycles are regular and my skin is clearer.", rating: 5 },
 ];
 
 const faqs = [
-  { q: "Are consultations online or in-person?", a: "Consultations happen online over Google Meet, so you can join from anywhere in Pakistan or overseas. In-person visits are available in Lahore by appointment." },
+  { q: "Are consultations online or in-person?", a: "Consultations happen online over Google Meet, so you can join from anywhere in Pakistan or overseas. In-person visits are available at Move Better Clinic, East Canal Road, Faisalabad, by appointment." },
   { q: "What happens after I book?", a: "You'll receive a Google Meet link and calendar invite. Complete a short health assessment before the call so we can spend our time solving your specific concerns." },
   { q: "Do I need to send my medical reports?", a: "If you have recent blood work (CBC, HbA1c, thyroid, vitamin D, lipid profile), please upload them during booking. It helps us build a safer, sharper plan." },
   { q: "How long until I see results?", a: "Most clients feel more energetic within 2 weeks and see visible changes in 4–6 weeks with consistent follow-through." },
@@ -53,14 +53,14 @@ function HomePage() {
       <section className="relative overflow-hidden bg-hero-gradient">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 pb-20 pt-12 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:px-8 lg:pt-20">
           <div className="flex flex-col justify-center">
-            <Reveal>
+            {/* <Reveal>
               <span className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-white/70 px-3 py-1.5 text-xs font-medium text-primary shadow-soft backdrop-blur">
                 <Sparkles className="h-3.5 w-3.5" /> Certified Nutritionist · Serving all of Pakistan
               </span>
-            </Reveal>
+            </Reveal> */}
             <Reveal delay={80}>
-              <h1 className="mt-5 font-display text-4xl font-bold leading-[1.05] text-foreground text-balance sm:text-5xl lg:text-6xl">
-                Nutrition that fits your <span className="bg-leaf-gradient bg-clip-text text-transparent">real life</span>, not a spreadsheet.
+              <h1 className="mt-6 font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance">
+                Nutrition that fits your <span className="text-primary">real life</span>, not a spreadsheet.
               </h1>
             </Reveal>
             <Reveal delay={160}>
@@ -70,7 +70,7 @@ function HomePage() {
             </Reveal>
             <Reveal delay={240}>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link to="/book" className="group inline-flex items-center justify-center gap-2 rounded-full bg-leaf-gradient px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:-translate-y-0.5">
+                <Link to="/book" className="group inline-flex items-center justify-center gap-2 rounded-full bg-leaf-gradient px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition hover:-translate-y-0.5 animate-pulse-glow">
                   Book Consultation <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                 </Link>
                 <Link to="/services" className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-white px-6 py-3.5 text-sm font-semibold text-foreground transition hover:border-primary hover:text-primary">
@@ -80,37 +80,15 @@ function HomePage() {
             </Reveal>
             <Reveal delay={340}>
               <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2"><Star className="h-4 w-4 fill-yellow-500 text-yellow-500" /> 4.9 / 5 from 1,200+ clients</div>
-                <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-primary" /> 8+ years of experience</div>
+                <div className="flex items-center gap-2"><Star className="h-4 w-4 fill-yellow-500 text-yellow-500" /> 4.9 / 5 from 50+ clients</div>
+                <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-primary" /> 3+ years of experience</div>
               </div>
             </Reveal>
           </div>
 
           <div className="relative">
             <Reveal delay={200} className="relative mx-auto max-w-md lg:max-w-none">
-              <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-leaf-gradient opacity-20 blur-3xl" />
-              <div className="relative overflow-hidden rounded-[2rem] border border-white/60 bg-white shadow-glow">
-                <img src={heroImg} alt="Certified Pakistani nutritionist holding fresh vegetables" width={1280} height={1280} className="h-full w-full object-cover" />
-              </div>
-              {/* floating cards */}
-              <div className="absolute -left-4 top-10 hidden animate-float rounded-2xl border border-border bg-white/90 p-4 shadow-soft backdrop-blur sm:block">
-                <div className="flex items-center gap-3">
-                  <span className="grid h-10 w-10 place-items-center rounded-full bg-secondary text-primary"><HeartPulse className="h-5 w-5" /></span>
-                  <div>
-                    <p className="text-xs text-muted-foreground">Avg. weight loss</p>
-                    <p className="font-display text-lg font-bold">2–4 kg / month</p>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute -right-4 bottom-10 hidden animate-float-slower rounded-2xl border border-border bg-white/90 p-4 shadow-soft backdrop-blur sm:block">
-                <div className="flex items-center gap-3">
-                  <span className="grid h-10 w-10 place-items-center rounded-full bg-secondary text-primary"><Users className="h-5 w-5" /></span>
-                  <div>
-                    <p className="text-xs text-muted-foreground">Clients guided</p>
-                    <p className="font-display text-lg font-bold">1,200+</p>
-                  </div>
-                </div>
-              </div>
+              <HeroInteractiveWidget />
             </Reveal>
           </div>
         </div>
@@ -122,15 +100,15 @@ function HomePage() {
           <p className="text-sm font-semibold uppercase tracking-wider text-primary">Why choose me</p>
           <h2 className="mt-2 font-display text-3xl font-bold sm:text-4xl">Warm, honest care — with real accountability.</h2>
         </Reveal>
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
           {whyChoose.map((w, i) => (
             <Reveal key={w.title} delay={i * 80}>
-              <div className="group h-full rounded-2xl border border-border bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-glow">
-                <span className="inline-grid h-12 w-12 place-items-center rounded-xl bg-secondary text-primary transition group-hover:scale-110">
+              <div className="group h-full flex flex-col items-center text-center rounded-2xl border border-border bg-white p-4 sm:p-6 shadow-soft transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-glow">
+                <span className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-primary transition group-hover:scale-110">
                   <w.icon className="h-6 w-6" />
                 </span>
-                <h3 className="mt-5 font-display text-lg font-semibold">{w.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{w.text}</p>
+                <h3 className="mt-4 sm:mt-5 font-display text-sm sm:text-lg font-semibold">{w.title}</h3>
+                <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-normal">{w.text}</p>
               </div>
             </Reveal>
           ))}
@@ -149,17 +127,17 @@ function HomePage() {
               View all services <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
             {SERVICES.slice(0, 6).map((s, i) => (
               <Reveal key={s.slug} delay={i * 60}>
-                <Link to="/services" className="group block h-full rounded-2xl border border-border bg-white p-6 transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow">
-                  <span className="inline-grid h-12 w-12 place-items-center rounded-xl bg-leaf-gradient text-primary-foreground shadow-soft">
+                <Link to="/services" className="group flex flex-col items-center text-center h-full rounded-2xl border border-border bg-white p-4 sm:p-6 transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-leaf-gradient text-primary-foreground shadow-soft transition group-hover:scale-110">
                     <s.icon className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-5 font-display text-lg font-semibold">{s.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{s.short}</p>
-                  <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-primary opacity-0 transition group-hover:opacity-100">
-                    Learn more <ArrowRight className="h-4 w-4" />
+                  <h3 className="mt-4 sm:mt-5 font-display text-sm sm:text-lg font-semibold">{s.title}</h3>
+                  <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-normal">{s.short}</p>
+                  <span className="mt-4 sm:mt-5 inline-flex items-center gap-1 text-xs sm:text-sm font-medium text-primary opacity-0 transition group-hover:opacity-100">
+                    Learn more <ArrowRight className="h-3.5 w-3.5" />
                   </span>
                 </Link>
               </Reveal>
@@ -202,10 +180,10 @@ function HomePage() {
       <section className="relative overflow-hidden bg-leaf-gradient py-16 text-primary-foreground">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-4 sm:px-6 lg:grid-cols-4 lg:px-8">
           {[
-            { n: 1200, s: "+", l: "Clients guided" },
+            { n: 50, s: "+", l: "Clients guided" },
             { n: 98, s: "%", l: "Satisfaction rate" },
-            { n: 8, s: "+", l: "Years experience" },
-            { n: 15, s: "+", l: "Pakistani cities" },
+            { n: 3, s: "+", l: "Years experience" },
+            { n: 5, s: "+", l: "Pakistani cities" },
           ].map((s, i) => (
             <Reveal key={i} delay={i * 80} className="text-center">
               <p className="font-display text-4xl font-bold sm:text-5xl">
@@ -223,14 +201,16 @@ function HomePage() {
           <p className="text-sm font-semibold uppercase tracking-wider text-primary">Client love</p>
           <h2 className="mt-2 font-display text-3xl font-bold sm:text-4xl">Real journeys. Real results.</h2>
         </Reveal>
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
+        <div className="mt-12 flex overflow-x-auto gap-5 pb-6 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory scrollbar-none scroll-smooth">
           {testimonials.map((t, i) => (
-            <Reveal key={t.name} delay={i * 90}>
-              <figure className="h-full rounded-2xl border border-border bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-glow">
-                <div className="flex gap-0.5 text-yellow-500">
-                  {Array.from({ length: t.rating }).map((_, j) => <Star key={j} className="h-4 w-4 fill-current" />)}
+            <Reveal key={t.name} delay={i * 90} className="snap-start shrink-0 w-[290px] sm:w-[360px] h-auto flex flex-col">
+              <figure className="h-full rounded-2xl border border-border bg-white p-6 shadow-soft transition hover:shadow-glow flex flex-col justify-between flex-1">
+                <div>
+                  <div className="flex gap-0.5 text-yellow-500">
+                    {Array.from({ length: t.rating }).map((_, j) => <Star key={j} className="h-4 w-4 fill-current" />)}
+                  </div>
+                  <blockquote className="mt-4 text-sm leading-relaxed text-foreground">"{t.text}"</blockquote>
                 </div>
-                <blockquote className="mt-4 text-sm leading-relaxed text-foreground">"{t.text}"</blockquote>
                 <figcaption className="mt-5 flex items-center gap-3">
                   <span className="grid h-10 w-10 place-items-center rounded-full bg-leaf-gradient font-display text-sm font-bold text-primary-foreground">
                     {t.name.charAt(0)}

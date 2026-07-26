@@ -6,21 +6,20 @@ import portrait from "@/assets/about-portrait.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Ayesha — Nutritionist & Dietitian in Pakistan" },
-      { name: "description", content: "Meet Ayesha, a certified Pakistani nutritionist with 8+ years of experience helping families across Pakistan build healthier lives." },
-      { property: "og:title", content: "About Ayesha — Nutritionist & Dietitian" },
-      { property: "og:description", content: "Personal story, philosophy and qualifications of Nourish with Ayesha." },
+      { title: "About Dn. Minahal Farrukh — Nutritionist & Dietitian in Pakistan" },
+      { name: "description", content: "Meet Dn. Minahal Farrukh, a certified clinical dietitian with 3+ years of experience helping families across Pakistan build healthier lives." },
+      { property: "og:title", content: "About Dn. Minahal Farrukh — Nutritionist & Dietitian" },
+      { property: "og:description", content: "Personal story, philosophy and qualifications of Nourish with Dn. Minahal Farrukh." },
     ],
   }),
   component: AboutPage,
 });
 
 const timeline = [
-  { year: "2016", title: "BSc Human Nutrition & Dietetics", body: "Graduated with distinction from University of Health Sciences, Lahore." },
-  { year: "2017", title: "Clinical Dietitian, Shaukat Khanum", body: "2 years in clinical practice supporting oncology & metabolic patients." },
-  { year: "2019", title: "MSc Clinical Nutrition", body: "Advanced training with a focus on diabetes and women's health." },
-  { year: "2021", title: "Opened Online Practice", body: "Started guiding Pakistani families across cities and diaspora — online." },
-  { year: "2024", title: "1,200+ Clients Guided", body: "Featured in leading Pakistani wellness publications and podcasts." },
+  { year: "2023", title: "BSc Human Nutrition & Dietetics", body: "Graduated with honors, majoring in clinical dietetics." },
+  { year: "2024", title: "Dietitian, Move Better Clinic", body: "Joined Move Better Clinic in Faisalabad, guiding clients on metabolic health, weight management, and PCOS." },
+  { year: "2025", title: "Expanded Online Practice", body: "Began consulting clients online across Pakistan and overseas, offering evidence-based nutritional care." },
+  { year: "2026", title: "50+ Clients Guided", body: "Successfully guided over 50+ clients through personalized dietary interventions with proven results." },
 ];
 
 const values = [
@@ -38,12 +37,12 @@ function AboutPage() {
             <Reveal>
               <p className="text-sm font-semibold uppercase tracking-wider text-primary">About</p>
               <h1 className="mt-2 font-display text-4xl font-bold text-balance sm:text-5xl">
-                Hi, I'm <span className="bg-leaf-gradient bg-clip-text text-transparent">Ayesha</span> — your nutrition partner.
+                Hi, I'm <span className="text-primary">Dn. Minahal Farrukh</span> — your nutrition partner.
               </h1>
             </Reveal>
             <Reveal delay={100}>
               <p className="mt-5 text-base text-muted-foreground sm:text-lg">
-                I grew up in a Pakistani household where love was served on a plate — and I saw firsthand how food shapes health, energy and mood. For over 8 years I've helped families across Pakistan reconnect with real, homemade food while achieving very specific goals: weight, sugar, PCOS, pregnancy and beyond.
+                I grew up in a Pakistani household where love was served on a plate — and I saw firsthand how food shapes health, energy and mood. For over 3 years I've helped families across Pakistan reconnect with real, homemade food while achieving very specific goals: weight, sugar, PCOS, pregnancy and beyond.
               </p>
             </Reveal>
             <Reveal delay={180}>
@@ -53,8 +52,8 @@ function AboutPage() {
             </Reveal>
             <Reveal delay={260}>
               <div className="mt-8 flex flex-wrap gap-4 text-sm">
-                <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-soft"><Award className="h-4 w-4 text-primary" /> Registered Dietitian (PNDS)</span>
-                <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-soft"><GraduationCap className="h-4 w-4 text-primary" /> MSc Clinical Nutrition</span>
+                <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-soft"><Award className="h-4 w-4 text-primary" /> Clinical Dietitian</span>
+                <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-soft"><GraduationCap className="h-4 w-4 text-primary" /> BSc Human Nutrition & Dietetics</span>
               </div>
             </Reveal>
           </div>
@@ -62,7 +61,7 @@ function AboutPage() {
             <div className="relative mx-auto max-w-sm">
               <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-leaf-gradient opacity-20 blur-3xl" />
               <div className="overflow-hidden rounded-[2rem] border border-white/60 shadow-glow">
-                <img src={portrait} alt="Portrait of Ayesha, certified nutritionist" width={1024} height={1280} loading="lazy" className="h-full w-full object-cover" />
+                <img src={portrait} alt="Portrait of Dn. Minahal Farrukh, certified dietitian" width={1024} height={1280} loading="lazy" className="h-full w-full object-cover" />
               </div>
             </div>
           </Reveal>
@@ -75,13 +74,13 @@ function AboutPage() {
           <p className="text-sm font-semibold uppercase tracking-wider text-primary">Mission & values</p>
           <h2 className="mt-2 font-display text-3xl font-bold sm:text-4xl">Care that meets you where you are</h2>
         </Reveal>
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
+        <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3">
           {values.map((v, i) => (
             <Reveal key={v.title} delay={i * 80}>
-              <div className="h-full rounded-2xl border border-border bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:border-primary/30">
-                <span className="inline-grid h-12 w-12 place-items-center rounded-xl bg-secondary text-primary"><v.icon className="h-6 w-6" /></span>
-                <h3 className="mt-5 font-display text-lg font-semibold">{v.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{v.text}</p>
+              <div className="h-full flex flex-col items-center text-center rounded-2xl border border-border bg-white p-4 sm:p-6 shadow-soft transition hover:-translate-y-1 hover:border-primary/30">
+                <span className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-primary"><v.icon className="h-6 w-6" /></span>
+                <h3 className="mt-4 sm:mt-5 font-display text-sm sm:text-lg font-semibold">{v.title}</h3>
+                <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-normal">{v.text}</p>
               </div>
             </Reveal>
           ))}
